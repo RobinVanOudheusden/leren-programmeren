@@ -26,5 +26,5 @@ print("de prijs is ",prijs,"")
 
 print("-------------------------------")
 print("|",aantal , 'x', keuze," pizza")
-print("| het totale bedrag is ",prijs,)
+print("| het totale bedrag is: €",prijs,)
 print("-------------------------------")

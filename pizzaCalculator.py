@@ -1,5 +1,8 @@
 import math
 
+#Robin van Oudheusden
+#99071681
+#Opdracht pizzaCalculator
 
 small = 6.99
 medium = 9.99

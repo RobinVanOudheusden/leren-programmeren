@@ -2,68 +2,68 @@
 repeat = True
 
 while repeat == True:
-    print("is de kaas geel?: (y/n)")
+    print("Is de kaas geel?: (y/n)")
     vraag = input().lower()
         
     if vraag == "y":
-        print("zitten er gaten in?: (y/n)")
+        print("Zitten er gaten in?: (y/n)")
         repeat = True
         vraag = input().lower()
         
         if vraag == "y":
-            print("is de kaas belachelijk duur?: (y/n)")
+            print("Is de kaas belachelijk duur?: (y/n)")
             repeat = True
             vraag = input().lower()
             if vraag == "y":
                 repeat = False
-                print("het is emmenthaler.")
+                print("Het is Emmenthaler.")
             elif vraag == "n":
-                print("het is leerdammer kaas.")
+                print("Het is Leerdammer kaas.")
                 repeat = False
 
         elif vraag == "n":
-            print("is de kaas hard als een steen?: (y/n)")
+            print("Is de kaas hard als een steen?: (y/n)")
             repeat = True
             vraag = input().lower()
 
             if vraag == "y":
-                print("het is parmigiano reggiano.")
+                print("Het is Parmigiano Reggiano.")
                 repeat = False
                 vraag = input().lower()
             elif vraag == ("n"):
-                print("het is goudse kaas.")
+                print("Het is Goudse kaas.")
                 repeat = False
                 vraag = input().lower()
     
     elif vraag == ("n"):
-        print("heeft de kaas blauwe schimmel?: (y/n)")
+        print("Heeft de kaas blauwe schimmel?: (y/n)")
         repeat = True
         vraag = input().lower()
 
         if vraag == ("ja"):
-            print("heeft de kaas een korst?: (y/n)")
+            print("Heeft de kaas een korst?: (y/n)")
             repeat = True
             vraag = input().lower()
             
             if vraag == ("y"):
-                print("het is blue de rockbaron.")
+                print("Het is Blue de Rockbaron.")
                 repeat = False
                 vraag = input().lower()
             elif vraag == ("n"):
-                print ("het is foume d'ambert.")
+                print ("Het is Foume d'Ambert.")
                 repeat = False
                 vraag = input().lower()
         elif vraag == ("n"):
-            print("heeft de kaas een korst? (y/n)")
+            print("Heeft de kaas een korst? (y/n)")
             repeat = True
             vraag = input().lower()
 
             if vraag == ("y"): 
-                print("het is camembert.")
+                print("Het is Camembert.")
                 repeat = False
                 vraag = input().lower()
             elif vraag == ("n"):
-                print("het is mozzarella.")
+                print("Het is Mozzarella.")
                 repeat = False
                 vraag = input().lower()
             

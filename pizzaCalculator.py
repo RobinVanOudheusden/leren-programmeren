@@ -22,7 +22,7 @@ if keuze == "medium":
 if keuze == "large":
     prijs = int (aantal) * large
 
-print("de prijs is ",prijs,"")
+print("\nde prijs is ",prijs,"")
 
 print("-------------------------------")
 print("|",aantal , 'x', keuze," pizza")

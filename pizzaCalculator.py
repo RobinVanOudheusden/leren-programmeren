@@ -4,27 +4,32 @@ import math
 #99071681
 #Opdracht pizzaCalculator
 
-small = 6.99
-medium = 9.99
-large = 12.99
+repeat = True
 
-keuze = input('wilt u small, medium of large pizza?: ')
-aantal = input('hoeveel pizzas zou u willen?: ')
+while repeat == True:
+    pizza_size = input("Wilt u small, medium of large pizza? ")
 
-prijs = 0
+    if pizza_size == 'small':
+        repeat = False
+        prijs= 6.99
+    elif pizza_size == 'medium':
+        repeat = False
+        prijs= 9.99
+    elif pizza_size == 'large':
+        repeat = False 
+        prijs= 12.99
+else:
+    print(pizza_size)
 
-if keuze == "small":
-    prijs = int(aantal) * small
+pizza_aantal = input('hoeveel pizzas wilt u? ' '')
 
-if keuze == "medium":
-    prijs = int (aantal) * medium
-
-if keuze == "large":
-    prijs = int (aantal) * large
-
-print("\nde prijs is €",prijs,"")
+try:
+    totaal= int(pizza_aantal) * prijs
+except: 
+    print("dat is geen cijfer")
+    exit()
 
 print("-------------------------------")
-print("|",aantal , 'x', keuze," pizza")
-print("| het totale bedrag is: €",prijs,)
+print("|",str(pizza_aantal) , 'x', str(pizza_size)," pizza")
+print("| het totale bedrag is: €",totaal,)
 print("-------------------------------")

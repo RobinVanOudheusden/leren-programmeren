@@ -1,6 +1,8 @@
 punten = 0
 
 vraag_naam = input("Hallo! Welkom bij dit sollicitatiegesprek, wat is uw naam?\n")
+if vraag_naam == "Barrie":
+    raise NameError("Barrie is hier niet welkom!")
 
 gefaald = ("\nHelaas " + vraag_naam + ", wij hebben geconstanteerd dat u niet aan de benodigde eisen van deze baan voldoet. :(")
 
@@ -23,6 +25,8 @@ if float(vraag4) > 3:
 vraag5 = input("\nHeeft u een mbo-4 diploma of hoger? (y/n)\n")
 if (vraag5) == "y":
     punten = punten + 1
+if vraag5 == "n":
+    raise NameError("Domoor!")
 
 vraag6 = input("\nBent u in bezit van een geldig Vrachtwagen rijbewijs? (y/n)\n")
 if (vraag6) == "y":
@@ -50,6 +54,8 @@ else:
 vraag9 = input("\nHoelang bent u?\n 1. 120cm \n 2. 135cm \n 3. 150cm of langer\n\n")
 if float(vraag9) == 3:
     punten = punten + 1
+if vraag9 == "1":
+    raise NameError("Smurf.")
 
 vraag10 = input("\nHoe zwaar bent u?\n 1. 80kg \n 2. 85kg \n 3. 90kg of meer\n\n")
 if float(vraag10) == 3:

@@ -1,4 +1,3 @@
-
 repeat = True
 
 while repeat == True:
@@ -40,7 +39,7 @@ while repeat == True:
         repeat = True
         vraag = input().lower()
 
-        if vraag == ("ja"):
+        if vraag == ("y"):
             print("Heeft de kaas een korst?: (y/n)")
             repeat = True
             vraag = input().lower()

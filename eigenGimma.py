@@ -1,5 +1,8 @@
-repeat = True
+# Robin van Oudheusden
+# 99071681@mydavinci.nl
+# Gorinchem
 
+repeat = True
 #intro
 while repeat == True:
     naam = input("Welkom bij deze game, mag ik uw naam?: \n")
@@ -57,7 +60,7 @@ while repeat == True:
                     
                     elif opnieuwspelen == "restart":
                         repeat = True
-                        
+
                 if move3a == "aanvallen":
                     print("\nJe koos voor aanvallen, maar het was een domme zet. Je tegenstander verdedigde en viel terug aan. GAME over..... \nYour HP: ♡ ♡ ♡ ♡ ♡ ♡ ♡ ♡ ♡ \nEnemies HP: ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♡ ♡ ♡")         
                     opnieuwspelen = input("Dit is het einde van de game, je hebt verloren. Wil je stoppen met spelen of nog een keer proberen? (quit/restart)\n").lower()

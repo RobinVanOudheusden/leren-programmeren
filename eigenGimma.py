@@ -5,7 +5,7 @@
 repeat = True
 #intro
 while repeat == True:
-    naam = input("Welkom bij deze game, mag ik uw naam?: \n")
+    naam = input("Welkom bij deze game, wat is uw naam?: \n")
     leeftijd = input("Mag ik uw leeftijd?: \n")
 
     if int(leeftijd) < 16:
@@ -24,8 +24,8 @@ while repeat == True:
                 move3a = input("MOVE 3: Wil je aanvallen of verdedigen?: \n")
 
                 if move3a == "verdedigen":
-                    print("\nJe ontweek de aanval van je tegenstander met succes en kon daarbij terug aanvallen. CRITICAL HIT! \nYour HP: ♥ ♥ ♥ ♡ ♡ ♡ ♡ ♡ ♡ \nEnemies HP: ♡ ♡ ♡ ♡ ♡ ♡ ♡ ♡ ♡ ♡")
-                    opnieuwspelen = input("Dit is het einde van de game, je hebt gewonnen! Wil je stoppen met spelen of nog een keer proberen? (quit/restart)\n").lower()
+                    print("\nJe ontweek de aanval van je tegenstander zonder succes en werd daarbij geraakt!. CRITICAL HIT! \nYour HP: ♡ ♡ ♡ ♡ ♡ ♡ ♡ ♡ ♡ ♡ \nEnemies HP: ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♡ ♡ ♡")
+                    opnieuwspelen = input("Dit is het einde van de game, je hebt verloren. Wil je stoppen met spelen of nog een keer proberen? (quit/restart)\n").lower()
 
                     if opnieuwspelen == "quit":
                         print("Je hebt gekozen om te stoppen, totziens!")
@@ -62,7 +62,7 @@ while repeat == True:
                         repeat = True
 
                 if move3a == "aanvallen":
-                    print("\nJe koos voor aanvallen, maar het was een domme zet. Je tegenstander verdedigde en viel terug aan. GAME over..... \nYour HP: ♡ ♡ ♡ ♡ ♡ ♡ ♡ ♡ ♡ \nEnemies HP: ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♡ ♡ ♡")         
+                    print("\nJe koos voor aanvallen, maar het was een domme zet. Je tegenstander verdedigde en viel terug aan. GAME over..... \nYour HP: ♡ ♡ ♡ ♡ ♡ ♡ ♡ ♡ ♡ ♡ \nEnemies HP: ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♡ ♡ ♡")         
                     opnieuwspelen = input("Dit is het einde van de game, je hebt verloren. Wil je stoppen met spelen of nog een keer proberen? (quit/restart)\n").lower()
 
                     if opnieuwspelen == "quit":
@@ -119,8 +119,8 @@ while repeat == True:
                         repeat = True
 
                 if move3b == "aanvallen":
-                    print("\nJe koos voor aanvallen, de verdediging van je tegenstander faalde en je maakte een fatale hit! \nYour HP: ♥ ♥ ♡ ♡ ♡ ♡ ♡ ♡ ♡ ♡ \nEnemies HP: ♡ ♡ ♡ ♡ ♡ ♡ ♡ ♡ ♡ ♡")
-                    opnieuwspelen = input("Dit is het einde van de game, je hebt gewonnen! Wil je stoppen met spelen of nog een keer proberen? (quit/restart)\n").lower()
+                    print("\nJe koos voor aanvallen, de verdediging van je tegenstander blokkeerde je en maakt een fatale hit! \nYour HP: ♡ ♡ ♡ ♡ ♡ ♡ ♡ ♡ ♡ ♡ \nEnemies HP: ♥ ♥ ♥ ♡ ♡ ♡ ♡ ♡ ♡ ♡ ♡")
+                    opnieuwspelen = input("Dit is het einde van de game, je hebt verloren. Wil je stoppen met spelen of nog een keer proberen? (quit/restart)\n").lower()
 
                     if opnieuwspelen == "quit":
                         print("Je hebt gekozen om te stoppen, totziens!")

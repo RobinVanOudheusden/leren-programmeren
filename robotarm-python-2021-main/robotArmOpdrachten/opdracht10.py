@@ -13,7 +13,7 @@ for y in range(5):
     robotArm.drop()
     for z in range(x):
         robotArm.moveLeft()
-    x-=1
+    x -= 1
 
 # Na jouw code wachten tot het sluiten van de window:
 robotArm.wait()

@@ -18,5 +18,7 @@ while repeat == True:
     else:
         break
 
+print("=[-| BOODSCHAPPENLIJSTJE |-]=")
 for aantal, toevoegen in boodschappenlijst.items():
     print(f"{toevoegen} x {aantal}")
+print("=[-]-[-]-[-]-[-]-[-]-[-]-[-]=")

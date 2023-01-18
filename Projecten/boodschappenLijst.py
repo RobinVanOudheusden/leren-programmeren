@@ -13,9 +13,7 @@ while repeat == True:
 
     restart = input("Wilt u nog wat toevoegen?: (y/n)\n")
 
-    if restart == ("y"):
-        repeat = True
-    else:
+    if restart == ("n"):
         break
 
 print("=[-| BOODSCHAPPENLIJSTJE |-]=")

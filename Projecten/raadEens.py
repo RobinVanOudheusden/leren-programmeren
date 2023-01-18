@@ -13,7 +13,6 @@ print("Het doel van de game is dat je zoveel mogelijk punten behaald binnen 20 r
 
 while repeat == True:
     getal = random.randint(0, 1000)
-    print(getal)
     repeat2 = True
     while repeat2 == True:    
         if pogingen == MAX_POGINGEN: 

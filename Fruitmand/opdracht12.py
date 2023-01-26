@@ -5,6 +5,9 @@ kleuren = {
     "green" : "groene",
     "orange" : "oranje",
     "brown" : "bruine",
+    "purple" : "paarse",
+    "pink" : "roze",
+    "black" : "zwart",
 }
 
 namen = []

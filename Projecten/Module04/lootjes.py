@@ -31,8 +31,9 @@ while repeat2 == True:
     else:
         repeat2 = False
         random.shuffle(lijst)
+        print(lijst)
 
-        for index in range(len(lijst)-1):
-            print(lijst[index],'heeft',lijst[index + 1])
+        for i in range(len(lijst)-1):
+            print(lijst[i],'heeft',lijst[i + 1])
         print(lijst[-1],'heeft',lijst[0])
 

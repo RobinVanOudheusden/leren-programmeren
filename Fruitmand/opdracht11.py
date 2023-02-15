@@ -10,13 +10,16 @@ for x in range(len(fruitmand)):
     kleur = (fruitmand[x]['color'])
     if kleur not in lijstkleuren:
         lijstkleuren.append(kleur)
+
 while repeat == True:
     kleur = str(input("Kies een kleur uit de kleuren : " + str(lijstkleuren)+"?\n")).lower()
+
     if (kleur) not in lijstkleuren:
-        print ("De Kleur " + kleur + " zit niet in de fruitmand")
+        print (f"De kleur {(kleur)} zit niet in de fruitmand")
     else:
         print("Kleur zit in de lijst.")
         repeat = False
+        
 for fruit in fruitmand:
             if fruit['color'] == kleur:
                 if fruit['round'] == True:

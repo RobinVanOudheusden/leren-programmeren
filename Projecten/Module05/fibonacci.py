@@ -6,4 +6,4 @@ def fibonacci(getal):
         a, b = b, a + b
     return resultaat
     
-print(fibonacci(20))
+print(fibonacci(25))

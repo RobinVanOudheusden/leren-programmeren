@@ -11,7 +11,7 @@ def division(n1, n2):
     return n1 / n2
 
 while True:
-    keuze = input("Wat wilt u doen? \n(A) Getallen Optellen \n(B) Getallen Aftrekken \n(C) Getallen Vermenigvuldigen \n(D) Getallen Delen \n(E) Getal Ophogen \n(F) Getal Verlagen \n(G) Getal Verdubbelen \n(H) Getal Halveren \n(I) Helemaal Stoppen:\n").lower()
+    keuze = input("Wat wilt u doen? \n(A) Getallen Optellen \n(B) Getallen Aftrekken \n(C) Getallen Vermenigvuldigen \n(D) Getallen Delen \n(E) Getal Ophogen \n(F) Getal Verlagen \n(G) Getal Verdubbelen \n(H) Getal Halveren \n(I) Helemaal Stoppen\n").lower()
 
     if keuze == "a":
         n1 = float(input("Welk getal optellen: "))
@@ -67,7 +67,7 @@ while True:
 
     uitkomst1 = uitkomst
     while True:
-        keuze_uitkomst = input(f"Wilt u wat met de uitkomst doen? ({uitkomst1}) \n(A) Getallen Optellen \n(B) Getallen Aftrekken \n(C) Getallen Vermenigvuldigen \n(D) Getallen Delen \n(E) Getal Ophogen \n(F) Getal Verlagen \n(G) Getal Verdubbelen \n(H) Getal Halveren \n(I) Helemaal Stoppen:\n").lower()
+        keuze_uitkomst = input(f"Wilt u wat met de uitkomst doen? ({uitkomst1}) \n(A) Getallen Optellen \n(B) Getallen Aftrekken \n(C) Getallen Vermenigvuldigen \n(D) Getallen Delen \n(E) Getal Ophogen \n(F) Getal Verlagen \n(G) Getal Verdubbelen \n(H) Getal Halveren \n(I) Helemaal Stoppen\n").lower()
 
         if keuze_uitkomst == "a":
             n2a = float(input(f"Welk getal optellen bij {uitkomst1}?: "))
@@ -96,22 +96,22 @@ while True:
                 print(f"{uitkomst1}")
 
         elif keuze_uitkomst == "e":
-            print("Getal opgehoogd: ")
+            print("Getal opgehoogd.")
             uitkomst1 = uitkomst1 + 1
             print(f"{uitkomst1}")
 
         elif keuze_uitkomst == "f":
-            print("Getal verlaagd: ")
+            print("Getal verlaagd.")
             uitkomst1 = uitkomst1 - 1
             print(f"{uitkomst1}")
 
         elif keuze_uitkomst == "g":
-            print("Getal verdubbeld: ")
+            print("Getal verdubbeld.")
             uitkomst1 = uitkomst1 * 2
             print(f"{uitkomst1}")
 
         elif keuze_uitkomst == "h":
-            print("Getal gehalveerd: ")
+            print("Getal gehalveerd.")
             uitkomst1 = uitkomst1 / 2
             print(f"{uitkomst1}")   
 

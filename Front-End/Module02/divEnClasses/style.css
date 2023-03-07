@@ -1,0 +1,28 @@
+h1 {
+    color: blue;
+}
+
+
+.kopje1 h2{
+    color: rgb(255, 0, 0);
+} 
+
+.kopje1 {
+    background-color: rgb(71, 255, 157);
+    color: rgb(0, 0, 0);
+    font-family: Tahoma;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+}
+
+.kopje2 h2 {
+    color: green;
+}
+
+.kopje2 {
+    background-color: rgb(211, 165, 80);
+    color: rgb(0, 0, 0);
+}

@@ -1,0 +1,14 @@
+.content h1{
+    font-size: 2rem;
+}
+
+.about img{
+    width:200px;
+    height: 210px;
+}
+
+.about-text{
+    margin-left: 20px;
+    text-align: center;
+}
+

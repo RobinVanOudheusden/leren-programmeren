@@ -6,6 +6,8 @@ from data import COST_FOOD_HORSE_COPPER_PER_DAY
 from data import COST_FOOD_HUMAN_COPPER_PER_DAY
 from data import COST_HORSE_SILVER_PER_DAY
 from data import COST_TENT_GOLD_PER_WEEK
+from data import COST_INN_HUMAN_SILVER_PER_NIGHT
+from data import COST_INN_HORSE_COPPER_PER_NIGHT
 
 ##################### M04.D02.O2 #####################
 
@@ -100,7 +102,7 @@ def getItemsValueInGold(items:list) -> float:
 ##################### M04.D02.O8 #####################
 
 def getCashInGoldFromPeople(people:list) -> float:
-    value= 0
+    value = 0
     for key in range (len(people)):
         amount = people[key]['cash']['gold']
         value += amount
@@ -123,7 +125,7 @@ def getInterestingInvestors(investors:list) -> list:
     return InterestingInvestors
 
 def getAdventuringInvestors(investors:list) -> list:
-    adventuringInvestors= []
+    adventuringInvestors = []
     for index in range (len(getInterestingInvestors(investors))):
         if getInterestingInvestors(investors)[index]['adventuring'] == True:
             adventuringInvestors.append(getInterestingInvestors(investors)[index])
@@ -139,18 +141,33 @@ def getTotalInvestorsCosts(investors:list, gear:list) -> float:
 ##################### M04.D02.O10 #####################
 
 def getMaxAmountOfNightsInInn(leftoverGold:float, people:int, horses:int) -> int:
-    pass
+    people_cost = silver2gold(COST_INN_HUMAN_SILVER_PER_NIGHT) * people
+    horses_cost  = copper2gold(COST_INN_HORSE_COPPER_PER_NIGHT) * horses
+    herberg_cost = people_cost  + horses_cost
+    maxNachten = math.floor(leftoverGold / herberg_cost)
+    return maxNachten
 
 def getJourneyInnCostsInGold(nightsInInn:int, people:int, horses:int) -> float:
-    pass
+    people_cost = silver2gold(COST_INN_HUMAN_SILVER_PER_NIGHT) * people
+    horses_cost  = copper2gold(COST_INN_HORSE_COPPER_PER_NIGHT) * horses
+    herberg_cost = round(nightsInInn * (people_cost + horses_cost) , 2)
+    return herberg_cost
 
 ##################### M04.D02.O12 #####################
 
 def getInvestorsCuts(profitGold:float, investors:list) -> list:
-    pass
+    goldList = []
+    AdventuringInvestors = getInterestingInvestors(investors)
+    for teller in range (len(AdventuringInvestors)):
+        investorsCuts = round(profitGold / 100 * AdventuringInvestors[teller][ 'profitReturn'] , 2)
+        goldList.append(investorsCuts)
+    return goldList
 
-def getAdventurerCut(profitGold:float, investorsCuts:list, fellowship:int) -> float:
-    pass
+def getAdventurerCut(profitGold:float, investorsCuts:list, fellowship:list) -> float:
+    for gold in investorsCuts:
+        profitGold -= gold
+    adventurerCut = round(profitGold / fellowship , 2)
+    return adventurerCut
 
 ##################### M04.D02.O13 #####################
 

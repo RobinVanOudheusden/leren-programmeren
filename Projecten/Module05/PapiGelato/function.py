@@ -245,7 +245,7 @@ def totale_prijs(totaal_topping_kosten,klant):
     elif klant == "Zakelijke":
         prijs = prijs_per_liter
 
-    totaal = Fprijs_per_bak(bonnetje.get("aantal_bakjes"),prijs_per_bak) + Fprijs_per_bol(bonnetje.get("aantal_bollen"),prijs) + Fprijs_per_hoorn(bonnetje.get("aantal_hoorn"),prijs_per_horrentje)
+    totaal = Fprijs_per_bak(bonnetje.get("aantal_bakjes"),prijs_per_bak) + Fprijs_per_bol(bonnetje.get("aantal_bollen"),prijs) + Fprijs_per_hoorn(bonnetje.get("aantal_hoorn"),prijs_per_horentje)
     totaal = totaal + totaal_topping_kosten
     return totaal
 
@@ -276,7 +276,7 @@ def bon(totaal_topping_kosten,klant):
     if bonnetje.get("aantal_hoorn") == 0:
         print_hoorn = ""
     else:
-        print_hoorn = ("Hoorntjes                 ",bonnetje.get("aantal_hoorn"), "x", format(prijs_per_horentje,".2f"), "= €", format(Fprijs_per_hoorn(bonnetje.get("aantal_hoorn"),prijs_per_horrentje),".2f"),"\n") 
+        print_hoorn = ("Hoorntjes                 ",bonnetje.get("aantal_hoorn"), "x", format(prijs_per_horentje,".2f"), "= €", format(Fprijs_per_hoorn(bonnetje.get("aantal_hoorn"),prijs_per_horentje),".2f"),"\n") 
     
 
     if bonnetje.get("aardbei") == 0:

@@ -3,7 +3,7 @@ error_message = "Sorry dat is geen optie die we aanbieden..."
 
 prijs_per_bolletje = 0.95
 prijs_per_liter = 9.80 
-prijs_per_horrentje = 1.25  
+prijs_per_horentje = 1.25  
 prijs_per_bak = 0.75 
 totaal_topping_kosten =  0
 

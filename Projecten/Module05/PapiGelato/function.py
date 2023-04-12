@@ -73,29 +73,21 @@ def aantal(klant) -> int:
 
 def smaak(bolletjeNummer,klant):
 
+    if klant == "Particuliere":
+        eenheid = "bolletje"
+    else:
+        eenheid = "liter"
     repeat = True
     while repeat == True:
-        if klant == "Particuliere":
 
-            keuze = input("Welke smaak wilt u voor bolletje nummer "+ str(bolletjeNummer)+"?: \n(A) Aardbei \n(C) Chocolade \n(V) Vanille?\n").lower()
+        keuze = input("Welke smaak wilt u voor " + eenheid + " nummer "+ str(bolletjeNummer)+"?: \n(A) Aardbei \n(C) Chocolade \n(V) Vanille?\n").lower()
             
-            if keuze in smaak_soort.keys():
-                return keuze
+        if keuze in smaak_soort.keys():
+            return keuze
 
-            else:
-                print(error_message)
-                repeat = True
-
-        elif klant == "Zakelijke":
-                
-                keuze = input("Welke smaak wilt u voor liter nummer "+ str(bolletjeNummer)+"? \n(A) Aardbei \n(C) Chocolade \n(V) Vanille?\n").lower()
-                
-                if keuze in smaak_soort.keys():
-                    return keuze
-    
-                else:
-                    print(error_message)
-                    repeat = True
+        else:
+            print(error_message)
+            repeat = True
     
 def smaken(aantal_bollen:int,klant):
 
@@ -172,7 +164,6 @@ def afsluiten(aantal_bolletjes,verpakking,klant):
 
     else:
         pass
-# vraag de klant of hij opnieuw wilt bestellen.
 
 def doorbestellen(klant):
     
@@ -199,8 +190,7 @@ def doorbestellen(klant):
                 return nieuwe_bestelling
         else:
             nieuwe_bestelling = False
-            return nieuwe_bestelling
-# Prijzen 
+            return nieuwe_bestelling 
 
 def Fprijs_per_bol(aantal:int,prijs):
 
@@ -274,7 +264,7 @@ def bon(totaal_topping_kosten,klant):
     elif klant == "Zakelijke":
         ijs_soort = "Liter(s)"
         prijs = prijs_per_liter
-        Btw = ("BTW (9%)                   =    €",BTW(prijs))
+        Btw = ("BTW (6%)                   =    €",BTW(prijs))
         
 
     if bonnetje.get("aantal_bakjes") == 0:
@@ -286,7 +276,7 @@ def bon(totaal_topping_kosten,klant):
     if bonnetje.get("aantal_hoorn") == 0:
         print_hoorn = ""
     else:
-        print_hoorn = ("Hoorntjes                 ",bonnetje.get("aantal_hoorn"), "x", format(prijs_per_horrentje,".2f"), "= €", format(Fprijs_per_hoorn(bonnetje.get("aantal_hoorn"),prijs_per_horrentje),".2f"),"\n") 
+        print_hoorn = ("Hoorntjes                 ",bonnetje.get("aantal_hoorn"), "x", format(prijs_per_horentje,".2f"), "= €", format(Fprijs_per_hoorn(bonnetje.get("aantal_hoorn"),prijs_per_horrentje),".2f"),"\n") 
     
 
     if bonnetje.get("aardbei") == 0:

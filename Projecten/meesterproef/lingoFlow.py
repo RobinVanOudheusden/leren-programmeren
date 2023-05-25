@@ -36,9 +36,3 @@ while repeat == True:
                 showoutro()
             else:
                 repeat = True
- 
-
-    
-
-
-

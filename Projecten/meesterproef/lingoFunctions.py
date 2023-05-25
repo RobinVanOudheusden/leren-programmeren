@@ -25,8 +25,7 @@ def showintro():
 ## Shows the outro
 def showoutro():
     print("Bedankt voor het spelen van Lingo!")
-    print("Dit spel is gemaakt door:")
-    print("Robin van Oudheusden")
+    print("Tot de volgende keer!")
 ## Gets a word out off the wordlist  
 def GetWord():
     word = choice(words)
@@ -107,10 +106,10 @@ def keepplaying():
     repeat = True
     while repeat == True:
         try:
-            keepplaying=input("Wil je nog een keer spelen? Ja/Nee").lower()
-            if keepplaying == "ja":
+            keepplaying=input("Wil je nog een keer spelen?: (y/n)\n").lower()
+            if keepplaying == "y":
                 return True
-            elif keepplaying == "nee":
+            elif keepplaying == "n":
                 return False
             else:
                 print("Je hebt geen geldige invoer gegeven")
@@ -121,12 +120,3 @@ def keepplaying():
 def printfirtslingoletter(wordtoguesslist:list):
     print("De eerste letter van het woord is:")
     print(colored(wordtoguesslist[0],KLEURGOED))
-
-
-    
-    
-
-
-
-        
-

@@ -10,15 +10,17 @@ def get_first_letter(random_woord):
     return eerste_letter
 
 while True:
-    print('Welkom bij Lingo!')
-    print("Voer een 5-letterwoord in en druk op Enter!\n")
+    print('Welkom bij Lingo!\n')
+    print("Voer een 5-letterwoord in en druk op Enter!")
+    print("Je krijgt 5 pogingen om het woord te raden.")
+    print("Als je een letter goed hebt, maar niet op de juiste plek, dan wordt de letter geel.")
+    print("Als je een letter goed hebt, en op de juiste plek, dan wordt de letter groen.")
+    print("Als je een letter fout hebt en de letter zit niet in het woord, dan wordt de letter rood.\n")
 
     woord = get_random_word(words)
     eerste_letter = get_first_letter(woord)
     print("Het woord begint met de letter: " + eerste_letter)
     print(woord)
-
-    opnieuw_spelen = ""
 
     for poging in range(1,6):
         while True:

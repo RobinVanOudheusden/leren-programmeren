@@ -22,8 +22,8 @@ while True:
 
     for poging in range(1,6):
         while True:
-            raad = input(f"Poging {poging}: ").lower()
-            if len(raad) == 5:
+            raden = input(f"Poging {poging}: ").lower()
+            if len(raden) == 5:
                 break
             else:
                 print("Het woord moet 5 letters lang zijn!")
@@ -31,18 +31,18 @@ while True:
         correcte_letters = ""
 
         for i in range(5):
-            if raad[i] == woord[i]:
-                correcte_letters += colored(raad[i], 'green')
-            elif raad[i] in woord:
-                correcte_letters += colored(raad[i], 'yellow')
-            elif raad[i] not in woord:
-                correcte_letters += colored(raad[i], 'red')
+            if raden[i] == woord[i]:
+                correcte_letters += colored(raden[i], 'green')
+            elif raden[i] in woord:
+                correcte_letters += colored(raden[i], 'yellow')
+            elif raden[i] not in woord:
+                correcte_letters += colored(raden[i], 'red')
             else:
-                 correcte_letters += raad[i]
+                 correcte_letters += raden[i]
 
         print(correcte_letters)
 
-        if raad == woord:
+        if raden == woord:
             print(colored(f"Gefeliciteerd! Je hebt het woord geraden in poging {poging}!", 'red'))
             break
 

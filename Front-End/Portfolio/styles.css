@@ -5,9 +5,9 @@ html {
 }
 
 :root {
-  --primary-color: #ff0000;
-  --primary-color-dark: #ff0000;
-  --secondary-color: #ff0000;
+  --primary-color: #6a5de4;
+  --primary-color-dark: #6a5de4;
+  --secondary-color: #6a5de4;
   --text-dark: #1f2937;
   --text-light: #6b7280;
   --extra-light: #faf5ff;
@@ -48,6 +48,11 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.nav__content .logo {
+  height: 45px;
+  width: 45px;
 }
 
 nav .logo a {

@@ -1,54 +1,50 @@
-import smtplib
-from email.mime.multipart import MIMEMultipart
-from email.mime.text import MIMEText
-import random
-import string
+import threading
+from telegram import Update
+from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, ConversationHandler, CallbackContext
 
-mail_to_address = input("Enter the email adress you want to registrate on: \n")
+# Sessiestatus
+SESSION_ACTIVE = 1
+SESSION_INACTIVE = 0
 
-for i in range(1):
-    #App-Password code dijc uzfw goww qvhw
-    my_adress = 'robin.supraenet@gmail.com'
-    password = 'dijc uzfw goww qvhw'
+# Functie om de sessie te starten
+def start_session(update: Update, context: CallbackContext):
+    user_id = update.message.from_user.id
+    context.user_data[user_id] = SESSION_ACTIVE
+    update.message.reply_text("Sessie gestart. Je kunt nu typen. Je hebt 10 seconden.")
 
-    password_characters = string.digits
-    # Generate 10 character long password by random and return it
-    password_characters = ''.join(random.choice(password_characters) for i in range(9))
+    # Stel een timer in om de sessie na 10 seconden te beëindigen
+    def end_session():
+        user_id = update.message.from_user.id
+        if context.user_data.get(user_id) == SESSION_ACTIVE:
+            context.user_data[user_id] = SESSION_INACTIVE
+            update.message.reply_text("Sessie beëindigd. Je kunt niet meer typen.")
 
-    # set up the SMTP server
-    s = smtplib.SMTP(host='smtp.gmail.com', port=587)
-    s.starttls()
-    s.login(my_adress, password)
+    timer = threading.Timer(10, end_session)
+    timer.start()
 
-    msg = MIMEMultipart()  # create a message
+# Functie om berichten te verwerken tijdens een actieve sessie
+def handle_message(update: Update, context: CallbackContext):
+    user_id = update.message.from_user.id
+    if context.user_data.get(user_id) == SESSION_ACTIVE:
+        text = update.message.text
+        update.message.reply_text(f"Je zei: {text}")
 
-    # add in the actual person name to the message template
-    message = "Dit is een test e-mail.\n" \
-              "Met dit account kunt u in de telegram app communiceren met de bot: Supraenet_Telegram_Bot\n" \
-              "Uw activatie code: " + password_characters + "\n" \
-              "Met vriendelijke groet,\n\n" \
-              "Robin van Oudheusden\n" \
-              "Triplence Technologies"
-    # Prints out the message body for our sake
+def main():
+    # Vervang 'YOUR_BOT_TOKEN' door de echte bot-token
+    updater = Updater(token='6501001622:AAFANqsidVQxue1Tlh6rPhDK6sT4DHxNUBs', use_context=True)
+    dispatcher = updater.dispatcher
 
-    # setup the parameters of the message
-    msg['From'] = my_adress
-    msg['To'] = mail_to_address
-    msg['Subject'] = "Aanmelding Triplence Telegram bot"
+    # Voeg de commando-handler toe
+    start_handler = CommandHandler('start', start_session)
+    dispatcher.add_handler(start_handler)
 
-    # add in the message body
-    msg.attach(MIMEText(message, 'plain'))
+    # Voeg de berichtenhandler toe
+    message_handler = MessageHandler(Filters.text & ~Filters.command, handle_message)
+    dispatcher.add_handler(message_handler)
 
-    # send the message via the server set up earlier.
-    s.send_message(msg)
-    del msg
+    # Start de bot
+    updater.start_polling()
+    updater.idle()
 
-    # Terminate the SMTP session and close the connection
-    s.quit()
-
-    print("Email sent to: " + mail_to_address + "\n")
-    registration = input("Enter the registration code you received by email: \n")
-    if registration == password_characters:
-        print("Registration code is correct!\n")
-        break
-    
+if __name__ == '__main__':
+    main()

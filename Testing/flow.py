@@ -1,21 +1,14 @@
-from accountActivation import * 
-from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
+import pymongo
+from accountActivation import *
+from telegram import Update
+from telegram.ext import CallbackContext
 
-def main():
-    print("[BROADCAST] *** TELEGRAM BOT IS RUNNING... ***")
-    # Bot Token
-    updater = Updater(token='6367764011:AAEwwmG6lrWzorqGL7Af8UPkBOUDvomRdmM', use_context=True)
-    dispatcher = updater.dispatcher
+# Connect to MongoDB database
+myclient = pymongo.MongoClient("mongodb://localhost:27017/")
+mydb = myclient["triplence-telegram-bot"]
+mycol1 = mydb["new_email_registrations"]
+mycol = mydb["registrations"]
 
-    # Define a command handler to start the conversation
-    dispatcher.add_handler(CommandHandler('start', start))
-
-    # Define a message handler to handle the user's response
-    dispatcher.add_handler(MessageHandler(Filters.text, start))
-
-    # Start the bot
-    updater.start_polling()
-    updater.idle()
-
-if __name__ == '__main__':
-    main()
+email = input("Email:\n")
+mycol1.insert_one({"email": email})
+setup_registration(Update, CallbackContext)
